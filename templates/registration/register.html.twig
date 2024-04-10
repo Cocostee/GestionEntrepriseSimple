@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center">Inscription</h1>
+
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+                <fieldset> 
+                    <legend class="text-center">Mon identité</legend>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.firstname) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.lastname) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.email) }}
+                    </div>
+                </fieldset>
+
+                <fieldset> 
+                    <legend class="text-center">Mon adresse</legend>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.adress) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.zipcode) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.city) }}
+                    </div>
+                </fieldset>
+
+                <div class="mb-3">
+                    {{ form_row(registrationForm.plainPassword) }}
+                </div>
+                
+                <div class="form-check mb-3">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Inscription</button>
+                </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

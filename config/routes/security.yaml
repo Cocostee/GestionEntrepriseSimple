@@ -1,3 +1,11 @@
 _security_logout:
     resource: security.route_loader.logout
     type: service
+
+_security_login_redirect:
+    path: /login/redirect
+    defaults:
+        _controller: App\Controller\UsersController::index
+        path: /index
+        permanent: true
+    methods: [GET]
