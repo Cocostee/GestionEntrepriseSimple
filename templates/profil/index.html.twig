@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card border rounded shadow">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">Profil</h1>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Prénom:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            {{ app.user.firstname }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Nom:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            {{ app.user.lastname }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Email:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            {{ app.user.email }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
