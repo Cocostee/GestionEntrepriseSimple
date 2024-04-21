@@ -1,0 +1,57 @@
+version: '4.0'
+
+services:
+  php:
+    container_name: ${DOCKER_NAME}_php
+    build: ./php
+    volumes:
+      - ../:/var/www/html
+    networks:
+      - internal
+
+  nginx:
+    container_name: ${DOCKER_NAME}_nginx
+    image: nginx:latest
+    ports:
+      - ${WEBSERVER_PORT}:80
+    volumes:
+      - ../:/var/www/html
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+    networks:
+      - internal
+      - extern
+
+  mariadb:
+    container_name: ${DOCKER_NAME}_mariadb
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - internal
+
+  phpmyadmin:
+    container_name: ${DOCKER_NAME}_phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: mariadb
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "8081:80"
+    depends_on:
+      - mariadb
+    networks:
+      - internal
+      - extern
+
+networks:
+  extern:
+    external: true
+  internal:
+    external: false
