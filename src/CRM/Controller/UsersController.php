@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\CRM\Controller;
 
 
 use Symfony\Component\HttpFoundation\Response;

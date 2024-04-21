@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Entity;
+namespace App\CRM\Entity;
 
-use App\Repository\RendezVousRepository;
+use App\Repository\CrmRendezVousRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RendezVousRepository::class)]
-class RendezVous
+class CrmRendezVous
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

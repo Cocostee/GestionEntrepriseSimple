@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Entity;
+namespace App\CRM\Entity;
 
-use App\Repository\DevisRepository;
+use App\Repository\CrmDevisRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: DevisRepository::class)]
-class Devis
+class CrmDevis
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

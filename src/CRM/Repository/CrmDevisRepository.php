@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace App\CRM\Repository;
 
-use App\Entity\Devis;
+use App\Entity\CrmDevis;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -14,7 +14,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Devis[]    findAll()
  * @method Devis[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DevisRepository extends ServiceEntityRepository
+class CrmDevisRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

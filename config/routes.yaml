@@ -4,6 +4,31 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+admin_controllers:
+    prefix: /admin
+    resource:
+        path: ../src/Admin/Controller/
+        namespace: App\Admin\Controller
+    type: attribute
+
+cms_controllers:
+    prefix: /cms
+    resource:
+        path: ../src/CMS/Controller/
+        namespace: App\CMS\Controller
+    type: attribute
+
+crm_controllers:
+    prefix: /crm
+    resource:
+        path: ../src/CRM/Controller/
+        namespace: App\CRM\Controller
+    type: attribute
+
 home:
     path: /
-    controller: App\Controller\AcceuilController::index
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'app_acceuil'
+        permanent: true
+

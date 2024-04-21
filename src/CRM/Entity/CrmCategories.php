@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Entity;
+namespace App\CRM\Entity;
 
-use App\Repository\CategoriesRepository;
+use App\Repository\CrmCategoriesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategoriesRepository::class)]
-class Categories
+class CrmCategories
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

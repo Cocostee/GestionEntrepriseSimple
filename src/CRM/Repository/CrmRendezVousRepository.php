@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace App\CRM\Repository;
 
-use App\Entity\RendezVous;
+use App\Entity\CrmRendezVous;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -14,7 +14,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method RendezVous[]    findAll()
  * @method RendezVous[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RendezVousRepository extends ServiceEntityRepository
+class CrmRendezVousRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

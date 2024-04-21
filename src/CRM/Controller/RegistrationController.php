@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace App\CRM\Controller;
 
 use App\Entity\Users;
 use App\Form\RegistrationFormType;
-use App\Security\UsersAuthenticator;
+use App\CRM\Security\UsersAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;

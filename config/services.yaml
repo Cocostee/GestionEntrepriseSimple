@@ -20,5 +20,26 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\Admin\:
+        resource: '../src/Admin/'
+        exclude:
+            - '../src/Admin/DependencyInjection/'
+            - '../src/Admin/Entity/'
+            - '../src/Admin/Kernel.php'
+
+    App\CMS\:
+        resource: '../src/CMS/'
+        exclude:
+            - '../src/CMS/DependencyInjection/'
+            - '../src/CMS/Entity/'
+            - '../src/CMS/Kernel.php'
+
+    App\CRM\:
+        resource: '../src/CRM/'
+        exclude:
+            - '../src/CRM/DependencyInjection/'
+            - '../src/CRM/Entity/'
+            - '../src/CRM/Kernel.php'
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

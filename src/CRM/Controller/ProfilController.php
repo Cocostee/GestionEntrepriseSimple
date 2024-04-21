@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Controller;
+namespace App\CRM\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class AcceuilController extends AbstractController
+class ProfilController extends AbstractController
 {
-    #[Route('/acceuil', name: 'app_acceuil')]
+    #[Route('/profil', name: 'profil')]
     public function index(): Response
     {
-        return $this->render('acceuil/index.html.twig', [
-            'controller_name' => 'AcceuilController',
+        return $this->render('profil/index.html.twig', [
+            'controller_name' => 'ProfilController',
         ]);
     }
 }
