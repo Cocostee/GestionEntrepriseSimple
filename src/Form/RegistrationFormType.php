@@ -23,39 +23,45 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'placeholder' => 'Enter your email'
+                    'placeholder' => 'Enter your email',
+                    'class' => 'form-control mb-2'
                 ],
-                'label' => 'Email'
+                'label' => 'Email : '
             ])
             ->add('lastname', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Enter your lastname'
+                    'placeholder' => 'Enter your lastname',
+                    'class' => 'form-control mb-2'
                 ],
-                'label' => 'Nom'
+                'label' => 'Nom : '
             ])
             ->add('firstname', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Enter your firstname'
+                    'placeholder' => 'Enter your firstname',
+                    'class' => 'form-control mb-2'
                 ],
-                    'label' => 'Prenom'
+                    'label' => 'Prenom : '
             ])
             ->add('adress', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Enter your adress'
+                    'placeholder' => 'Enter your adress',
+                    'class' => 'form-control mb-2'
                 ],
-                'label' => 'Adresse'
+                'label' => 'Adresse : '
             ])
             ->add('city', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Enter your city'
+                    'placeholder' => 'Enter your city',
+                    'class' => 'form-control mb-2'
                 ],
-                'label' => 'Ville'
+                'label' => 'Ville : '
             ])
             ->add('zipcode', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Enter your zipcode'
+                    'placeholder' => 'Enter your zipcode',
+                    'class' => 'form-control mb-2'
                 ],
-                'label' => 'Code postal'
+                'label' => 'Code postal : '
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
@@ -70,7 +76,7 @@ class RegistrationFormType extends AbstractType
                 // this is read and encoded in the controller
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password', 'class' => 'form-control'],
-                'label' => 'Password',
+                'label' => 'Password : ',
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',

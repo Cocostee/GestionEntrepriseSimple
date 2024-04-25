@@ -3,33 +3,32 @@
 {% block title %}Page de Présentation{% endblock %}
 
 {% block body %}
-
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('/assets/css/acceuil.css') }}">
 {% endblock %}
 
-<div class="container">
-    <div class="hero-section">
-        <h1>GESTION ENTREPRISE</h1>
+<div class="container mx-auto">
+    <div class="hero-section bg-gradient-to-r from-blue-500 to-blue-700 text-white py-16 px-8 mb-8 rounded-lg shadow-lg text-center">
+        <h1 class="text-4xl font-bold">GESTION ENTREPRISE</h1>
     </div>
 
-    <div class="services-section">
-        <h2>Nos Services</h2>
-        <div class="services-list">
-            <div class="service">
-                <h3>Gestion de Devis</h3>
+    <div class="services-section mb-8">
+        <h2 class="text-2xl font-bold mb-4">Nos Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-2">Gestion de Devis</h3>
                 <p>Nous proposons une gestion efficace de vos devis pour optimiser vos ventes.</p>
             </div>
-            <div class="service">
-                <h3>Gestion de Rendez-vous</h3>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-2">Gestion de Rendez-vous</h3>
                 <p>Planifiez et organisez vos rendez-vous clients de manière simple et efficace.</p>
             </div>
         </div>
     </div>
 </div>
 
-<footer class="footer">
-    <p>&copy; 2024 Votre Entreprise. Tous droits réservés.</p>
+<footer class="bg-gray-200 py-4 text-center">
+    <p class="text-gray-600">&copy; 2024 Votre Entreprise. Tous droits réservés.</p>
 </footer>
 {% endblock %}

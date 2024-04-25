@@ -3,53 +3,44 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h1 class="text-center">Inscription</h1>
+<div class="container mx-auto">
+    <div class="max-w-md mx-auto mt-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Inscription</h1>
 
-            {{ form_errors(registrationForm) }}
+        {{ form_errors(registrationForm) }}
 
-            {{ form_start(registrationForm) }}
-                <fieldset> 
-                    <legend class="text-center">Mon identité</legend>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.firstname) }}
-                    </div>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.lastname) }}
-                    </div>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.email) }}
-                    </div>
-                </fieldset>
-
-                <fieldset> 
-                    <legend class="text-center">Mon adresse</legend>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.adress) }}
-                    </div>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.zipcode) }}
-                    </div>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.city) }}
-                    </div>
-                </fieldset>
-
-                <div class="mb-3">
-                    {{ form_row(registrationForm.plainPassword) }}
+        {{ form_start(registrationForm) }}
+            <fieldset class="mb-8 border rounded-lg p-4">
+                <legend class="text-lg font-semibold text-center mb-4">Mon identité</legend>
+                <div class="mb-4">
+                    {{ form_row(registrationForm.firstname,) }}
+                    {{ form_row(registrationForm.lastname,) }}
+                    {{ form_row(registrationForm.email,) }}
                 </div>
-                
-                <div class="form-check mb-3">
-                    {{ form_row(registrationForm.agreeTerms) }}
-                </div>
+            </fieldset>
 
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-lg">Inscription</button>
+            <fieldset class="mb-8 border rounded-lg p-4">
+                <legend class="text-lg font-semibold text-center mb-4">Mon adresse</legend>
+                <div class="mb-4">
+                    {{ form_row(registrationForm.adress,) }}
+                    {{ form_row(registrationForm.zipcode,) }}
+                    {{ form_row(registrationForm.city,) }}
                 </div>
-            {{ form_end(registrationForm) }}
-        </div>
+            </fieldset>
+
+            <div class="mb-4">
+                {{ form_row(registrationForm.plainPassword,) }}
+            </div>
+            
+            <div class="form-check mb-4">
+                {{ form_row(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input'}}) }}
+                <label class="form-check-label" for="{{ registrationForm.agreeTerms.vars.id }}">J'accepte les termes et conditions</label>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Inscription</button>
+            </div>
+        {{ form_end(registrationForm) }}
     </div>
 </div>
 {% endblock %}

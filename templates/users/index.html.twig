@@ -3,12 +3,12 @@
 {% block title %}Bonjour{% endblock %}
 
 {% block body %}
-    <main class="container">
-        <section class="row">
-            <div class="col-12">    
-                <h1>Je suis connecté !</h1>  
-                <p>Bonjour {{ app.user.lastname }}</p>
+    <main class="container mx-auto mt-8">
+        <section class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <h1 class="text-2xl font-bold">Je suis connecté !</h1>  
+                <p class="text-gray-600">Bonjour {{ app.user.lastname }}</p>
             </div>
-        <section>
+        </section>
     </main>
 {% endblock %}
